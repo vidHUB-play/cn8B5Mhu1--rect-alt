@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InfinityFree Landing Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0f172a;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* Container */
+.container{
+    width:100%;
+    max-width:900px;
+}
+
+/* Card */
+.card{
+    background:#111827;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 0 40px rgba(0,0,0,0.45);
+}
+
+/* Video Frame */
+.video-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    overflow:hidden;
+}
+
+/* Image Rapih */
+.video-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* Overlay */
+.video-frame::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:35%;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        transparent
+    );
+    z-index:1;
+}
+
+/* Play Button Tengah */
+.play-button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.45);
+    border:2px solid rgba(255,255,255,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5;
+    transition:0.25s ease;
+    backdrop-filter:blur(4px);
+}
+
+/* Icon */
+.play-button::before{
+    content:"▶";
+    color:white;
+    font-size:30px;
+    margin-left:6px;
+}
+
+/* Hover */
+.video-frame:hover .play-button{
+    transform:translate(-50%, -50%) scale(1.08);
+    background:rgba(0,0,0,0.65);
+}
+
+/* Controls */
+.controls{
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:88%;
+    z-index:5;
+}
+
+.progress{
+    width:100%;
+    height:4px;
+    background:rgba(255,255,255,0.25);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress::after{
+    content:"";
+    display:block;
+    width:30%;
+    height:100%;
+    background:white;
+    border-radius:20px;
+}
+
+/* Content */
+.content{
+    padding:24px;
+    text-align:center;
+}
+
+.content h1{
+    color:white;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.content p{
+    color:#cbd5e1;
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    body{
+        padding:12px;
+    }
+
+    .video-frame{
+        aspect-ratio:9/16;
+    }
+
+    .play-button{
+        width:70px;
+        height:70px;
+    }
+
+    .play-button::before{
+        font-size:24px;
+    }
+
+    .content{
+        padding:18px;
+    }
+
+    .content h1{
+        font-size:24px;
+    }
+
+    .content p{
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <a href="https://t.co/wvtJBy7LSm" target="_blank">
+
+            <div class="video-frame">
+
+                <img src="https://cdn.aceimg.com/81cbe197e.jpg" alt="Thumbnail">
+
+                <!-- Tombol Play -->
+                <div class="play-button"></div>
+
+                <!-- Progress -->
+                <div class="controls">
+                    <div class="progress"></div>
+                </div>
+
+            </div>
+
+        </a>
+
+        <div class="content">
+
+            <h1>Watch Video</h1>
+
+            <p>
+                
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
